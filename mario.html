@@ -2,30 +2,62 @@
 <html>
 <head>
     <style>
+
+        body{
+
+            margin: 5% 15%;
+            font-family: sans-serif;
+        }
         #pyramid {
             font-family: "Courier New", monospace;
             line-height: 0;
         }
+        #title {
+            color: #ededed;
+            background-color: #ad5d84;
+            border-radius: 15px 15px 0px 0px;
+            padding: 3px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 900;
+        }
+
+        #settings {
+            background-color: #cecece;
+            padding: 13px;
+            text-align: center;
+        }
+
+        #brick {
+            padding-right: 30px;
+        }
+
     </style>
 </head>
 <body>
-    <h1>Pyramid Slide</h1>
+    <div id="title">
+        <h1>Pyramid Slide</h1>
+    </div>
 <!--
     <h3>
         Behold this wonderful pyramid:
     </h3>
 -->
-
-    <form>
-        <select>
-            <option value="#">#</option>
-            <option value="@">@</option>
-            <option value="X">X</option>
-            <option value="$">$</option>
-</select>
-        <input type="range" name="pyramidHeight" min="0" max="20">
-    </form>
-
+    <div id="settings">
+        <form>
+            <label id="brick">Brick symbol:
+                <select id = "brick-style">
+                    <option value="#">#</option>
+                    <option value="@">@</option>
+                    <option value="X">X</option>
+                    <option value="$">$</option>
+                </select>
+            </label>
+            <label>How high?
+                <input type="range" id="pyramid-height" min="0" max="20">
+            </label>
+        </form>
+    </div>
     <div id="pyramid">
         <!-- Our pyramid will go inside here -->
 

@@ -1,5 +1,5 @@
 
-drawPyramid(5);
+drawPyramid(20);
 
 
 /**
