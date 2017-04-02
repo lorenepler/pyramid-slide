@@ -5,25 +5,47 @@
 
         body{
 
-            margin: 5% 15%;
             font-family: sans-serif;
         }
         #pyramid {
             font-family: "Courier New", monospace;
             line-height: 0;
+            text-align: center;
+            color: #ad5d84;
+            font-size: 20px;
+
+
+        }
+        #pod{
+            margin: 2% 27%;
+            background-color: #f7f7f7;
+            padding-bottom: 12px;
+            border-radius: 15px;
+
+        }
+
+        #pyramidBody{
+            border-style: solid;
+            border-color: #ad5d84;
+            border-width: 2px;
+            border-radius: 3px;
+            margin: 50px;
+            background-color: #ededed;
+
         }
         #title {
             color: #ededed;
             background-color: #ad5d84;
-            border-radius: 15px 15px 0px 0px;
             padding: 3px;
             text-align: center;
             font-size: 12px;
             font-weight: 900;
+            border-radius: 15px 15px 0px 0px;
         }
 
         #settings {
             background-color: #cecece;
+            font-size: 11px;
             padding: 13px;
             text-align: center;
         }
@@ -34,38 +56,41 @@
 
     </style>
 </head>
-<body>
-    <div id="title">
-        <h1>Pyramid Slide</h1>
-    </div>
-<!--
-    <h3>
-        Behold this wonderful pyramid:
-    </h3>
--->
-    <div id="settings">
-        <form>
-            <label id="brick">Brick symbol:
-                <select id = "brick-style">
-                    <option value="#">#</option>
-                    <option value="@">@</option>
-                    <option value="X">X</option>
-                    <option value="$">$</option>
-                </select>
-            </label>
-            <span style="white-space:nowrap">
-                <label>How high?
-                    <input type="range" id="heightRange" min="1" max="20" oninput="heightDisplay.value = heightRange.value; determineHeightAndThenDrawPyramid()">
-                    <output id="heightDisplay">10</output>
-                </label>
+    <body>
+        <div id=pod>
+            <div id="title">
+                <h1>Pyramid Slide</h1>
+            </div>
+        <!--
+            <h3>
+                Behold this wonderful pyramid:
+            </h3>
+        -->
+            <div id="pyramidBody">
+                <div id="settings">
+                    <form>
+                        <label id="brick">Brick symbol:
+                            <select id = "brickStyle" oninput="determineHeightAndThenDrawPyramid()">
+                                <option value="#">#</option>
+                                <option value="@">@</option>
+                                <option value="X">X</option>
+                                <option value="$">$</option>
+                            </select>
+                        </label>
+                        <span style="white-space:nowrap">
+                            <label>How high?
+                                <input type="range" id="heightRange" min="1" max="20" oninput="heightDisplay.value = heightRange.value; determineHeightAndThenDrawPyramid()">
+                                <output id="heightDisplay">10</output>
+                            </label>
 
-            </span>
-        </form>
-    </div>
-    <div id="pyramid">
-        <!-- Our pyramid will go inside here -->
-    </div>
-
-    <script src="mario.js"></script>
-</body>
+                        </span>
+                    </form>
+                </div>
+                <div id="pyramid">
+                    <!-- Our pyramid will go inside here -->
+                </div>
+            </div>
+            <script src="mario.js"></script>
+        </div>
+    </body>
 </html>

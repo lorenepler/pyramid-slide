@@ -1,11 +1,12 @@
 
 //drawPyramid(10);
 
-drawPyramid(10);
+drawPyramid(10, "#");
 
 function determineHeightAndThenDrawPyramid() {
 
     var heightStr = document.getElementById("heightRange").value;
+    var brickStyle = document.getElementById("brickStyle").value;
     // just so we know we're here
     //console.log("someone invoked the determineHeightAndThenDrawPyramid function!");
 
@@ -14,10 +15,10 @@ function determineHeightAndThenDrawPyramid() {
     //console.log(height)
 
     // draw the pyramid with the given height
-    drawPyramid(height)
+    drawPyramid(height, brickStyle);
 }
 
-function drawPyramid(height) {
+function drawPyramid(height, brickStyle) {
 
     document.getElementById("pyramid").innerHTML = "";
     // TODO 2
@@ -37,7 +38,7 @@ function drawPyramid(height) {
             rowStr += "."; // QUIZ: what happens if we use a space (" ") instead of a period?
         }
         for (var i = 0; i < numBricks; i++) {
-            rowStr += "#";
+            rowStr += brickStyle;
         }
 
         // create a text element with the string of characters
