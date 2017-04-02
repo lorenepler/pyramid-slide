@@ -1,7 +1,12 @@
 
-drawPyramid(20);
+drawPyramid(10);
 
 
+
+function myFunction() {
+    var height = document.getElementById("pyramid-height").value;
+    document.getElementById("demo").innerHTML = "You wrote: " + x;
+}
 /**
  * drawPyramid
  *

@@ -53,9 +53,15 @@
                     <option value="$">$</option>
                 </select>
             </label>
-            <label>How high?
-                <input type="range" id="pyramid-height" min="0" max="20">
-            </label>
+            <span style="white-space:nowrap">
+                <label>How high?
+                    <!-- <input type="range" id="pyramidHeight" min="0" max="20" oninput="default-pyramid-height.value = pyramid-height.value">
+                    <output id="defaultPyramidHeight">10</output> -->
+                    <input type="range" id="pyramidHeight" min="1" max="20" oninput="pyramidHeightValue.value = pyramidHeight.value">
+                    <output id="pyramidHeightValue">10</output>
+                </label>
+
+            </span>
         </form>
     </div>
     <div id="pyramid">
