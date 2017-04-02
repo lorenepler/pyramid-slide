@@ -1,24 +1,28 @@
 
+//drawPyramid(10);
+
 drawPyramid(10);
 
+function determineHeightAndThenDrawPyramid() {
 
+    var heightStr = document.getElementById("heightRange").value;
+    // just so we know we're here
+    //console.log("someone invoked the determineHeightAndThenDrawPyramid function!");
 
-function myFunction() {
-    var height = document.getElementById("pyramid-height").value;
-    document.getElementById("demo").innerHTML = "You wrote: " + x;
+    // here we convert the string to an int
+    height = parseInt(heightStr);
+    //console.log(height)
+
+    // draw the pyramid with the given height
+    drawPyramid(height)
 }
-/**
- * drawPyramid
- *
- * Renders, in the HTML document, a Mario pyramid of the specified height
- */
+
 function drawPyramid(height) {
 
+    document.getElementById("pyramid").innerHTML = "";
     // TODO 2
     // delete the "under construction" element, ie the <div id="notice">
     var pyramidDiv = document.getElementById("pyramid");
-    var constructionDiv = document.getElementById("construction");
-    pyramidDiv.removeChild(constructionDiv);
 
     // for each row....
     for (var row = 0; row < height; row++) {
@@ -36,16 +40,14 @@ function drawPyramid(height) {
             rowStr += "#";
         }
 
-        // you can delete this now
-        console.log(rowStr)
+        // create a text element with the string of characters
+        textElem = document.createTextNode(rowStr);
 
-        // TODO 1
-        var p = document.createElement("p");
-        var textNode = document.createTextNode(rowStr);
-        p.appendChild(textNode);
-        pyramidDiv.appendChild(p);
-        // create an element whose inner text is rowStr,
-        // and insert it as a child of the container <div id="pyramid">
+        // create a <p> element with the text inside
+        rowElem = document.createElement("p");
+        rowElem.appendChild(textElem);
 
+        // insert the paragraph as a child of the container <div>
+        document.getElementById("pyramid").appendChild(rowElem);
     }
 }

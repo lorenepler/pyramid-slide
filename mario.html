@@ -55,10 +55,8 @@
             </label>
             <span style="white-space:nowrap">
                 <label>How high?
-                    <!-- <input type="range" id="pyramidHeight" min="0" max="20" oninput="default-pyramid-height.value = pyramid-height.value">
-                    <output id="defaultPyramidHeight">10</output> -->
-                    <input type="range" id="pyramidHeight" min="1" max="20" oninput="pyramidHeightValue.value = pyramidHeight.value">
-                    <output id="pyramidHeightValue">10</output>
+                    <input type="range" id="heightRange" min="1" max="20" oninput="heightDisplay.value = heightRange.value; determineHeightAndThenDrawPyramid()">
+                    <output id="heightDisplay">10</output>
                 </label>
 
             </span>
@@ -66,11 +64,6 @@
     </div>
     <div id="pyramid">
         <!-- Our pyramid will go inside here -->
-
-        <div id="construction">
-            <p>Uh oh! the pyramid is still under construction.</p>
-            <p>Check back again soon... our developers are hard at wrk as we speak!</p>
-        </div>
     </div>
 
     <script src="mario.js"></script>
